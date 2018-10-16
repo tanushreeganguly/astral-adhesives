@@ -1,0 +1,60 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /astral-adhesives
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteRule (.*) https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^about-us$ /astral-adhesives/about-us.php [L]
+RewriteRule ^career-details$ /astral-adhesives/career-details.php [L]
+RewriteRule ^career-details/$ /astral-adhesives/career-details.php [L]
+RewriteRule ^about-us/$ /astral-adhesives/about-us.php [L]
+RewriteRule ^home$ /astral-adhesives/index.php [L]
+RewriteRule ^gallery/$ /astral-adhesives/gallery.php [L]
+RewriteRule ^gallery$ /astral-adhesives/gallery.php [L]
+RewriteRule ^gallery/([^/]*)$ /astral-adhesives/gallery.php?type=$1  [L]
+
+RewriteRule ^career/$ /astral-adhesives/career.php [L]
+RewriteRule ^career$ /astral-adhesives/career.php [L]
+RewriteRule ^industrial-glue-adhesive/$ /astral-adhesives/industrial.php [L]
+RewriteRule ^industrial-glue-adhesive$ /astral-adhesives/industrial.php [L]
+RewriteRule ^career_([^/]*)$ /astral-adhesives/career.php?msg=$1 [L]
+RewriteRule ^brands/$ /astral-adhesives/brands.php [L]
+RewriteRule ^brands$ /astral-adhesives/brands.php [L]
+RewriteRule ^home/$ /astral-adhesives/index.php [L]
+RewriteRule ^contact-us$ /astral-adhesives/contact-us.php [L]
+RewriteRule ^contact-us/$ /astral-adhesives/contact-us.php [L]
+RewriteRule ^press-release$ /astral-adhesives/press-release.php [L]
+RewriteRule ^press-release/$ /astral-adhesives/press-release.php [L]
+RewriteRule ^news-events$ /astral-adhesives/news-events.php [L]
+RewriteRule ^news-events/$ /astral-adhesives/news-events.php [L]
+RewriteRule ^faq$ /astral-adhesives/faq.php [L]
+RewriteRule ^faq/$ /astral-adhesives/faq.php [L]
+RewriteRule ^download$ /astral-adhesives/download.php [L]
+RewriteRule ^download/$ /astral-adhesives/download.php [L]
+RewriteRule ^RnD$ /astral-adhesives/rnd.php [L]
+RewriteRule ^RnD/$ /astral-adhesives/rnd.php [L]
+RewriteRule ^addresume$ /astral-adhesives/addresume.php [L]
+RewriteRule ^addresume/$ /astral-adhesives/addresume.php [L]
+RewriteRule ^milestones$ /astral-adhesives/milestones.php [L]
+RewriteRule ^milestones/$ /astral-adhesives/milestones.php [L]
+
+RewriteRule ^career-form-([^/]*)$ /astral-adhesives/career-form.php?id=$1  [L]
+RewriteRule ^jobdetails-([^/]*)$ /astral-adhesives/jobdetails.php?id=$1  [L]
+
+RewriteRule ^mission-vision/$ /astral-adhesives/mission-vision.php [L]
+RewriteRule ^mission-vision$ /astral-adhesives/mission-vision.php [L]
+RewriteRule ^enquiry$ /astral-adhesives/enquiry.php [L]
+RewriteRule ^enquiry/$ /astral-adhesives/enquiry.php [L]
+
+RewriteRule ^p/([^/]*)-([^/]*)$ /astral-adhesives/product-listing.php?title=$1&id=$2 [L]
+RewriteRule ^b/([^/]*)-([^/]*)$ /astral-adhesives/brand-detail.php?title=$1&id=$2 [L]
+RewriteRule ^c/([^/]*)/([^/]*)-([^/]*)$ /astral-adhesives/chemistry-listing.php?cat_name=$1&title=$2&id=$3 [L]
+RewriteRule ^v/([^/]*)/([^/]*)/([^/]*)/([^/]*)-([^/]*)$ /astral-adhesives/product-details.php?application=$1&chemistry=$2&brand=$3&title=$4&id=$5 [L]
+
+
+ErrorDocument 404 /astral-adhesives/404.php
+
