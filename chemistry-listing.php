@@ -3,7 +3,7 @@ $POST		= $objTypes->validateUserInput($_REQUEST);
 $catgoryid  = intval($POST['id']);
 if($catgoryid > 0){
    
-    $data = $objTypes->fetchRow(" SELECT a.id,a.title,a.meta_description,a.meta_keywords,a.description,a.thumbnail,b.title as chemistry,b.id as chemistry_title,b.parent_category_id,c.id as brand_id,c.title as brand_title from tbl_categories as a inner join tbl_categories as b on b.parent_category_id=a.id left join tbl_products_details as d on b.id=d.category_id left join tbl_brands as c on c.id=d.brand_id where b.id=".$catgoryid." order by b.title asc");
+    $data = $objTypes->fetchRow(" SELECT a.id,a.title,b.meta_title,b.meta_description,b.meta_keywords,a.description,a.thumbnail,b.title as chemistry,b.id as chemistry_title,b.parent_category_id,c.id as brand_id,c.title as brand_title from tbl_categories as a inner join tbl_categories as b on b.parent_category_id=a.id left join tbl_products_details as d on b.id=d.category_id left join tbl_brands as c on c.id=d.brand_id where b.id=".$catgoryid." order by b.title asc");
 
 	/* $data_chemistry=$objTypes->fetchAll("SELECT `title`,`thumb_logo_image`,`id`,`description`,`thumb_listing_image`,`parent_category_id` FROM `tbl_brands` WHERE `parent_category_id`=$catgoryid");*/
 
@@ -34,7 +34,7 @@ if($catgoryid > 0){
 
       <section id="breadcrumbs">
         <div class="container">
-          <a href="javascript:;">Home</a> <a href="javascript:void(0);">Product</a> <?php echo stripslashes($data['title'])?>
+          <a href="<?=base_url?>">Home</a> <a href="javascript:void(0);">Product</a> <?php echo stripslashes($data['title'])?>
         </div>
       </section>
 
@@ -65,19 +65,26 @@ if($catgoryid > 0){
          ?>		 
 
           <div class="prod_tab_hld">
-            <div class="category_holder">
-            <h3 class="showonmobile"> Category: </h3>
+            <div class="category_holder"><h3 class="showonmobile"> Category: </h3>
             <div class="select_category"><span id="cat">Select Category </span><img src="<?=base_url?>assets/images/footer-arrow.png" alt=""></div>
               <ul class="owl-theme">
 			  <?php
+        $sql_select=$objTypes->fetchRow("select id,title from tbl_categories where id=$catgoryid");?>
+            <li><a href="javascript:void(0);" class="activeCategory"><?php echo stripslashes($sql_select['title']);?></a></li>
+        <?php
 			  if(count($sql_chemistry)>0){
 			  foreach($sql_chemistry as $chemistry){
-				  if($chemistry['id']==$catgoryid){
+                
+
+				 /* if($chemistry['id']==$catgoryid){
 			  ?>
                 <li><a href="javascript:void(0);" class="activeCategory"><?php echo stripslashes($chemistry['title']);?></a></li>
-				  <?php }else{?>
+				  <?php }*///else{?>
+               
+                <?php if($chemistry['id']!=$catgoryid){?>
                 <li><a href="<?=base_url?>c/<?=$objTypes->prepare_url(stripslashes($data['title']))?>/<?=$objTypes->prepare_url(stripslashes($chemistry['title']))?>-<?=$chemistry['id']?>"><?php echo stripslashes($chemistry['title']);?></a></li>
 			  <?php
+
 				   }
 				 } 
 			  }
@@ -177,7 +184,9 @@ if($catgoryid > 0){
        });
      $(".brand_val,.default_data").on('click',function(){
        var getUrl = window.location;
-       var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+//console.log(getUrl);
+       var baseUrl = getUrl .protocol + "//" + getUrl.host;
+//console.log(baseUrl);
        var brand_id= $(this).attr('data');
        var catgory_id="<?php echo $catgoryid;?>";
        //var brand_id=data_val.split('_');
@@ -187,7 +196,7 @@ if($catgoryid > 0){
               data:{'brand_id':brand_id,'category_id':catgory_id},
               url: baseUrl+'/brand_product.php',
               success:function(response){
-                 
+                 console.log(response);
                  $(".sub_category_hld ul li a").removeClass("activeProduct");
                  $("#"+brand_id).addClass("activeProduct");
                 $(".prod_blurb_con").hide();

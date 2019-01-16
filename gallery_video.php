@@ -9,7 +9,7 @@ if(count($sqlimage)>0){
 				   foreach($sqlimage as $image_list){
 					   
 								$img_video.="<div class='galleryBlurb'><h3>".stripslashes($image_list['title1'])." ".stripslashes($image_list['title2']).",".stripslashes($image_list['location'])."</h3>
-									<div class='galleryImg'><a id='".$image_list['id']."' href='http://www.youtube.com/watch?v=".stripslashes($image_list['youtube'])."' class='video_link'><img orgSrc='".base_url."uploads/astral_adhesive_image/large/".$image_list['image1']."' src='".base_url."assets/images/loader-gallery-2.gif' alt='' class='loader_gif'>
+									<div class='galleryImg'><a id='".$image_list['id']."' href='http://www.youtube.com/watch?v=".stripslashes($image_list['youtube'])."' class='video_link'><img orgSrc='".base_url."uploads/astral_adhesive_image/large/".$image_list['image1']."' src='".base_url."assets/images/loader-gallery.gif' alt='' class='loader_gif'>
 									<img class='gal_img' src='".base_url."uploads/astral_adhesive_image/large/".$image_list['image1']."' style='opacity: 1;'>
 									<div class='video_play'><img src='".base_url."assets/images/play-btn.png' alt=''></div>
 									</a></div>
@@ -23,6 +23,16 @@ if(count($sqlimage)>0){
   
 ?>
 <script type="text/javascript" src="<?=base_url?>assets/js/gallery.js"></script>
+<script type="text/javascript">
+	$('.video_link').magnificPopup({
+       type: 'iframe',
+       closeOnBgClick: true,
+       modal: true,
+       gallery: {
+           enabled: false
+       }
+   });
+</script>
 
  
  

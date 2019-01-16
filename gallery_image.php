@@ -38,6 +38,27 @@ if(count($sqlimage)>0){
   
 ?>
 <script type="text/javascript" src="<?=base_url?>assets/js/gallery.js"></script>
+<script type="text/javascript"> $('.magnific-gallery').each(function (index, value) {
+        var gallery = $(this);
+        var galleryImages = $(this).data('links').split(',');
+        var items = [];
+        for (var i = 0; i < galleryImages.length; i++) {
+            items.push({
+                src: galleryImages[i],
+                title: ''
+            });
+            console.log(items);
+        }
+        gallery.magnificPopup({
+            mainClass: 'mfp-fade',
+            items: items,
+            gallery: {
+                enabled: true,
+                tPrev: $(this).data('prev-text'),
+                tNext: $(this).data('next-text')
+            },
+            type: 'image'
+        });
+    });</script>
 
- 
  

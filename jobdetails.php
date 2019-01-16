@@ -51,14 +51,14 @@ $result = $objTypes->fetchRow("select job_code,department,title,to_experience,jo
          },
         data:  'email='+email+'&name='+name+'&job_id='+job_code+'&city='+area_detail[0]+'&country='+area_detail[1],  
         success:function(response){ 
-          //alert(response);
+         // alert(response);
           $('#loading').hide();
-          if(response!=0){
+           if(response!=0){
                for(var j=0;j<total_job;j++){
                   var company_name  = member.positions.values[j].company.name;
                   var designation  = member.positions.values[j].title;
                   var type  = member.positions.values[j].company.type;
-                // alert(company_name+","+designation+","+type);
+                 //alert(company_name+","+designation+","+type);
                  $.ajax({
                   type: 'POST',
                   url: 'ajax_apply_for_job.php',
@@ -67,21 +67,16 @@ $result = $objTypes->fetchRow("select job_code,department,title,to_experience,jo
                     $('#loading').hide();
                    /* if(response=='success'){
                       alert('Successfully applied for Job..!');
-                      
                     }*/
                   }
                 });
                 }
-                $(".error_data").html('Successfully applied for Job..!');
-                return false;
+               $('.error_data').html('Successfully applied for Job..!');
           }else{
-           $(".error_data").html('Already applied');
-             return false;
+            $('.error_data').html('Already applied');
           }
-
         }
       });
-
      
      
      // alert(designation+","+area_detail[0]+","+area_detail[1]+","+company_name);
@@ -171,7 +166,7 @@ $result = $objTypes->fetchRow("select job_code,department,title,to_experience,jo
               <li></li>
               <li>
                 <span><a href="<?=base_url?>career-form-<?php echo $jobid;?>" class="commanBtn">Apply Now</a></span>
-                <span><a href="javascript:void(0)" class="linkdinlog apply_links" id="<?php echo $res['id']; ?>">Apply With</a></span>
+                <span><a href="javascript:void(0)" class="linkdinlog apply_links" id="<?php echo $jobid;?>">Apply With</a></span>
               </li>
             </ul>
         </div>

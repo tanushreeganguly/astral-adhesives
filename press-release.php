@@ -8,9 +8,9 @@ include_once('config/config.php');
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-  <title>Astral Adhesives</title>
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
+  <title>News and Press Release - Astral Adhesives</title>
+  <meta name="description" content="Please write the meta description by using below meta keywords" />
+  <meta name="keywords" content="News and Press Release" />
   <link href="<?=base_url?>assets/images/favicon.ico" rel="shortcut icon" type="" />
   <link href="<?=base_url?>assets/css/main.css" rel="stylesheet" type="text/css">
   <?php include_once('include/googlecode.php'); ?>

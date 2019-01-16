@@ -10,7 +10,7 @@ $POST   = $objTypes->validateUserInput($_REQUEST);
   <link href="<?=base_url?>assets/images/favicon.ico" rel="shortcut icon" type="" />
   <link href="<?=base_url?>assets/css/main.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script type="text/javascript" src="//platform.linkedin.com/in.js">
+   <script type="text/javascript" src="https://platform.linkedin.com/in.js">
     api_key: 81w5xifcml7xwt
     authorize: true
    // onLoad: onLinkedInLoad
@@ -64,6 +64,7 @@ $POST   = $objTypes->validateUserInput($_REQUEST);
                 });
                 }
                $('.error_data').html('Successfully applied for Job..!');
+               window.location.href='career?msg=1'; 
           }else{
             $('.error_data').html('Already applied');
           }
@@ -198,14 +199,10 @@ $POST   = $objTypes->validateUserInput($_REQUEST);
             
           </div>
           <div class="error_data">
-              <?php
-                if(isset($POST['msg']) && $POST['msg']==1){ ?>
-                   <p> Successfully applied for Job..!</p>
-
-                <?php }
-                 ?>
-
-            </div>
+        <?php if((isset($POST['msg']) && $POST['msg']==1) || (isset($_REQUEST['msg']) && $_REQUEST['msg']=='1') ){ ?>
+                    Successfully applied for Job..!
+                <?php } ?>
+        </div>
           <div class="opening_table_con">
             <div class="opening_details">
               <ul>

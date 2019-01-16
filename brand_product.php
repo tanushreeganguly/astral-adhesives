@@ -1,12 +1,12 @@
 <?php
 require_once("config/config.php");
 
-$POST		= $objTypes->validateUserInput($_POST);
+$POST= $objTypes->validateUserInput($_POST);
 $brand_id=$POST['brand_id'];
 $category_id=$POST['category_id'];
 $product_html="<div class='prod_blurb_con'>";
 $sql_product=$objTypes->fetchAll("select a.id,a.title,a.short_description,a.category_id,a.brand_id,b.thumbnail,a.application_id,b.image from tbl_products_details as a left join tbl_products_images as b on a.id=b.product_id where a.brand_id='".$brand_id."' and a.category_id='".$category_id."' and a.is_active=1 and is_delete=1 order by a.title asc");
-		    if(count($sql_product)>0){
+    if(count($sql_product)>0){
 			  foreach($sql_product as $product){
 $datacategory = $objTypes->fetchRow('select title,id from tbl_categories where id='.$product['application_id'] );
 $datachemistry = $objTypes->fetchRow('select title,id from tbl_categories where id='.$product['category_id'] );

@@ -25,7 +25,7 @@ $POST   =   $objTypes->validateUserInput($_REQUEST);
 function smssendotp($ref_no,$mobile)
 {
         $ch = curl_init();  // initiate curl
-        $url = "http://www.smsjust.com/sms/user/urlsms.php?"; // where you want to post data - final
+        $url = "https://www.smsjust.com/sms/user/urlsms.php?"; // where you want to post data - final
         curl_setopt($ch, CURLOPT_URL,$url);
         curl_setopt($ch, CURLOPT_POST, true);  // tell curl you want to post something
         curl_setopt($ch, CURLOPT_POSTFIELDS, "username=astralpoly&pass=aptl@2017&senderid=ASTRAL&dest_mobileno=$mobile&message=Thank you for contacting us, your application reference number is $ref_no&response=Y"); 
@@ -308,7 +308,7 @@ if(isset($POST['data']) && $POST['data']=='1')
         { 
           if(strlen($alternate)!='10')
           { 
-            $error="Please Enter 10 Digit Mobile.";
+            $error="Please enter 10 digit mobile number.";
             $flag=false;
             $alternateclass = "errorRed";
             
@@ -550,23 +550,25 @@ if(isset($POST['data']) && $POST['data']=='1')
                );
         
 
-
+      //echo "SELECT * FROM tbl_career_apply WHERE email = '".$decodeemail."' and job_id= '".$job_id."' and is_delete = 1 and is_active = 1";
       $result_apply = $objTypes->fetchAll("SELECT * FROM tbl_career_apply WHERE email = '".$decodeemail."' and job_id= '".$job_id."' and is_delete = 1 and is_active = 1");
-
+//echo "ddd".sizeof($result_apply);
       
       if(sizeof($result_apply) == 0 ){
-       //print_r($insertarray);
+     
        
       $insert_serve = $objTypes->insert("tbl_career_apply", $insertarray);
      
 
      
        
-      //echo '============'; exit;
+      
       if($insert_serve)
       {
         
-        echo $userid = $objTypes->lastInsertId();
+         $userid = $objTypes->lastInsertId();
+
+        
             
                 $ref_no = 'AA000-'.$userid;
          
@@ -814,35 +816,82 @@ if(isset($POST['data']) && $POST['data']=='1')
                           }
 
                   }
-                              /*  $mail->IsSMTP();
-                                $mail->Mailer     = "smtp";
-                                $mail->Host       = "astraladhesives.com"; 
-                                $mail->SMTPDebug  = 0; 
-                                $mail->SMTPAuth   = true; 
-                                $mail->Port       = 25;
-                                $mail->SMTPSecure = 'TLS';
-                                $mail->Username   = "info@astraladhesives.com";
-                                $mail->Password   = "info123!@#";
-                                $mail->addReplyTo('info@astraladhesives.com', 'Astral Adhesives'); 
-                                $mail->setFrom('info@astraladhesives.com', 'Astral Adhesives');
-                                $mail->addAddress('info@astraladhesives.com', 'Astral Adhesives');
-                                $mail->addBCC('tanushree.ganguly@bcwebwise.com', 'Tanushree'); 
-                                $mail->addAddress($email);
-                                $mail->isHTML(true);  
-                                
-                                $mail->Subject  = 'Career';     
-                                $mail->Body     = 'We appreciate your interest in our services. Our team will get in touch with you shortly.';*/
-                                
-                               /* if(!$mail->send()){
-                                   $error="Error in sending message.";
-                                   
-                                  
-                                }else {*/
-
-                                 // @header("location:".base_url."career_1"); 
-                                // }
                  if($flag==true && strlen($error)<=0) 
-                 {               
+                 {   
+
+                            $mail->IsSMTP();
+                            $mail->Mailer     = "smtp";
+                            $mail->Host       = "mail.astraladhesives.com"; 
+                            $mail->SMTPDebug  = 0; 
+                            $mail->SMTPAuth   = true; 
+                            $mail->Port       = 587;
+                            $mail->SMTPSecure = 'TLS';
+                            $mail->Username   = "marketing@astraladhesives.com";
+                            $mail->Password   = "Adhesives123";
+                            $mail->addReplyTo('marketing@astraladhesives.com', 'Astral Adhesives'); 
+                            $mail->setFrom('marketing@astraladhesives.com', 'Astral Adhesives');
+                            
+                           // $mail->addBCC('tanushree.ganguly@bcwebwise.com', 'Tanushree'); 
+                            $mail->addAddress($decodeemail);
+                            $mail->isHTML(true);  
+                            
+                            $mail->Subject  = 'Career';     
+                            $mail->Body     = '<html>
+                                    <head>
+                                    <title>Careers</title>
+                                    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+                                    </head>
+                                    <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+                                     
+                                    <table width="700"   border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#1673BF" style="border:1px solid #000;" >
+                                    <tr>
+                                        <td height="122" colspan="2" align="left" valign="top">
+                                          <a href="https://test.astraladhesives.com"><img src="https://test.astraladhesives.com/assets/images/logo.gif" alt="Astral Adhesives" width="323" height="73" border="0"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td height="384" colspan="2" align="center"><img src="https://test.astraladhesives.com/assets/images/careers.gif" width="262" height="262" alt="Careers at Astral Adhesives"></td>
+                                      </tr>
+                                      <tr>
+                                        <td height="184" colspan="2" valign="top"  style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:150%; color:#ffffff; padding-left:99px; padding-right:99px; text-align:center;"> 
+                                        Thank you for showing your interest in our organisation. If selected, you will be contacted by the concerned team with details of the  interview, at the earliest. You can also reach out to us to get an 
+                                        update on the status of your application through  <span style="display:inline-block">your reference id AA000-'.$userid.' .</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="79">
+                                          <img src="https://test.astraladhesives.com/assets/images/corner.gif" width="79" height="74" alt=""></td>
+                                        <td width="621" bgcolor="#FFFFFF">
+                                        <table id="Table_01" border="0" cellpadding="0" cellspacing="0" style="width: 612px; ">
+                                      <tr>
+                                        <td width="216" rowspan="2"><a href="http://www.astraladhesives.com/"  style="font-size:22px; font-family:`Times New Roman`, Times, serif;  font-weight:bold; color:#1D69B7; text-decoration:none;" >
+                                        www.astraladhesives.com</a></td>
+                                      <td width="1" rowspan="2">
+                                          <img src="https://test.astraladhesives.com/assets/images/fff_02.gif" width="1" height="52" alt=""></td>
+                                      <td width="203" align="center"></td>
+                                      <td width="1" rowspan="2">
+                                          <img src="https://test.astraladhesives.com/assets/images/fff_04.gif" width="1" height="52" alt=""></td>
+                                      <td width="52" rowspan="2">
+                                          <a href="https://www.facebook.com/AstralAdhesives/"><img src="https://test.astraladhesives.com/assets/images/fb.gif" alt="facebook" width="45" height="52" border="0"></a></td>
+                                      <td width="45" rowspan="2">
+                                          <a href="https://twitter.com/astraladhesives"><img src="https://test.astraladhesives.com/assets/images/twitter.gif" alt="twitter" width="45" height="52" border="0"></a></td>
+                                      <td width="43" rowspan="2">
+                                          <a href="https://www.youtube.com/channel/UC-7wKHr0O_armoSAddVgHIw"><img src="https://test.astraladhesives.com/assets/images/youtube.gif" alt="youtube" width="45" height="52" border="0"></a></td>
+                                      <td width="41" rowspan="2">
+                                          <a href="https://www.instagram.com/astral_adhesives/"><img src="https://test.astraladhesives.com/assets/images/insta.gif" alt="instagram" width="45" height="52" border="0"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="203" align="center"><a href="tel:7311103331" style="font-size:21px; font-family:`Times New Roman`, Times, serif; color:#1D69B7; font-weight:bold; text-decoration:none;" > <img src="https://test.astraladhesives.com/assets/images/tel.gif" alt="" width="33" height="28" border="0" align="absmiddle"> 7311103331</a></td>  </tr>
+                                    </table></td>
+                                      </tr>
+                                    </table>
+                                     
+                                    </body>
+                                    </html>';
+                            
+                            if(!$mail->send()){
+                               $error="Error in sending message.";
+                               
+                              
+                            }            
                  $name=$email=$mobile=$country=$city=$state=$pan=$aadhar=$language=$medium=$dob=$gender=$institute_name=$institute_city=$institute_state=$course=$result_marks=$qualification=$alternate=$evalution=$year_from=$year_to=$employment_status=$employer=$industry_type=$role=$designation=$reporting_to=$ctc=$start_date=$gross=$option_state=$option_city=$notice_period=$resume_title=$decodeinstitute_name="";   
 
                 $error="Successfully applied for Job..!";
@@ -864,7 +913,7 @@ if(isset($POST['data']) && $POST['data']=='1')
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-  <title>Astral Pipes</title>
+  <title>Astral Adhesives</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <link href="<?=base_url?>assets/images/favicon.ico" rel="shortcut icon" type="">
@@ -980,7 +1029,7 @@ if(isset($POST['data']) && $POST['data']=='1')
                 </span>
               </li>
               <li>
-                <span><strong>Language Know</strong></span>
+                <span><strong>Language Known</strong></span>
                 <span>
                   <input type="radio" id="Hindi" name="language" value="hindi" checked>
                   <label for="Hindi">Hindi</label>
@@ -1181,49 +1230,49 @@ if(isset($POST['data']) && $POST['data']=='1')
               <li>
                 <span><strong>Industry Type</strong></span>
                 <span>
-          				<select name="industry_type_1" id="industry_type_1" class="selectBox <?php echo $industrytypeclass;?>">
+                  <select name="industry_type_1" id="industry_type_1" class="selectBox <?php echo $industrytypeclass;?>">
                     <option value="">Select</option>
                     <option value="account" <?php echo ($industry_type=='account') ? 'selected' : ''?>>Account</option>
-          					<option value="agriculture" <?php echo ($industry_type=='agriculture') ? 'selected':''?> >Agriculture</option>
-          					<option value="advertising" <?php echo ($industry_type=='advertising')?'selected':''?> >Advertising or Media</option>
-          					<option value="army" <?php echo ($industry_type=='army')?'selected':''?> >Army or Airforce</option>
+                    <option value="agriculture" <?php echo ($industry_type=='agriculture') ? 'selected':''?> >Agriculture</option>
+                    <option value="advertising" <?php echo ($industry_type=='advertising')?'selected':''?> >Advertising or Media</option>
+                    <option value="army" <?php echo ($industry_type=='army')?'selected':''?> >Army or Airforce</option>
                     <option value="auto"  <?php echo ($industry_type=='auto')?'selected':''?>>Auto</option>
-          					<option value="banking" <?php echo ($industry_type=='banking')?'selected':''?>>Banking</option>
-          					<option value="bpo" <?php echo ($industry_type=='bpo')?'selected':''?>>BPO</option>
-          					<option value="broking_house" <?php echo ($industry_type=='broking house')?'selected':''?>>Broking house</option>
-          					<option value="cement" <?php echo ($industry_type=='cement')?'selected':''?>>Cement</option>
-          					<option value="ceramic" <?php echo ($industry_type=='ceramic')?'selected':''?>>Ceramic</option>
-          					<option value="chemical" <?php echo ($industry_type=='chemical')?'selected':''?>>Chemical</option>
-          					<option value="construction" <?php echo ($industry_type=='construction')?'selected':''?>>Construction</option>
-          					<option value="consultant" <?php echo ($industry_type=='consultant')?'selected':''?>>Consultant</option>
-          					<option value="consumer_durable" <?php echo ($industry_type=='consumer durable')?'selected':''?>>Consumer Durable</option>
-          					<option value="courier" <?php echo ($industry_type=='courier')?'selected':''?>>Courier</option>
-          					<option value="dairy" <?php echo ($industry_type=='dairy')?'selected':''?>>Dairy</option>
-          					<option value="design" <?php echo ($industry_type=='design')?'selected':''?>>Design</option>
-          					<option value="education" <?php echo ($industry_type=='education')?'selected':''?>>Education</option>
-          				</select>
+                    <option value="banking" <?php echo ($industry_type=='banking')?'selected':''?>>Banking</option>
+                    <option value="bpo" <?php echo ($industry_type=='bpo')?'selected':''?>>BPO</option>
+                    <option value="broking_house" <?php echo ($industry_type=='broking house')?'selected':''?>>Broking house</option>
+                    <option value="cement" <?php echo ($industry_type=='cement')?'selected':''?>>Cement</option>
+                    <option value="ceramic" <?php echo ($industry_type=='ceramic')?'selected':''?>>Ceramic</option>
+                    <option value="chemical" <?php echo ($industry_type=='chemical')?'selected':''?>>Chemical</option>
+                    <option value="construction" <?php echo ($industry_type=='construction')?'selected':''?>>Construction</option>
+                    <option value="consultant" <?php echo ($industry_type=='consultant')?'selected':''?>>Consultant</option>
+                    <option value="consumer_durable" <?php echo ($industry_type=='consumer durable')?'selected':''?>>Consumer Durable</option>
+                    <option value="courier" <?php echo ($industry_type=='courier')?'selected':''?>>Courier</option>
+                    <option value="dairy" <?php echo ($industry_type=='dairy')?'selected':''?>>Dairy</option>
+                    <option value="design" <?php echo ($industry_type=='design')?'selected':''?>>Design</option>
+                    <option value="education" <?php echo ($industry_type=='education')?'selected':''?>>Education</option>
+                  </select>
                 </span>
               </li>
                <li>
                 <span><strong>Designation</strong></span>
                 <span>
                   <select name="designation_1" id="designation_1" class="selectBox <?php echo $designationclass;?>">
-                    <option option="">Select</option>	
-          					<option option="assistant" <?php echo ($designation=='assistant')?'selected':''?>>Assistant</option>					
+                    <option option="">Select</option> 
+                    <option option="assistant" <?php echo ($designation=='assistant')?'selected':''?>>Assistant</option>          
                     <option option="jr_officer" <?php echo ($designation=='jr officer')?'selected':''?>>Jr. Officer</option>
-          					<option option="officer" <?php echo ($designation=='officer')?'selected':''?>>Officer</option>
-          					<option option="sr_officer" <?php echo ($designation=='sr officer')?'selected':''?>>Sr. Officer</option>					
-          					<option option="jr_executive" <?php echo ($designation=='jr executive')?'selected':''?>>Jr. Executive</option>
-          					<option option="executive" <?php echo ($designation=='executive')?'selected':''?>>	Executive</option>
+                    <option option="officer" <?php echo ($designation=='officer')?'selected':''?>>Officer</option>
+                    <option option="sr_officer" <?php echo ($designation=='sr officer')?'selected':''?>>Sr. Officer</option>          
+                    <option option="jr_executive" <?php echo ($designation=='jr executive')?'selected':''?>>Jr. Executive</option>
+                    <option option="executive" <?php echo ($designation=='executive')?'selected':''?>>  Executive</option>
                     <option option="sr_executive" <?php echo ($designation=='sr executive')?'selected':''?>>Sr. Executive</option>
-          					<option option="asst_manager" <?php echo ($designation=='asst manager')?'selected':''?>>Asst. Manager</option>
-          					<option option="dy_manager" <?php echo ($designation=='dy manager')?'selected':''?>>Dy. Manager</option>
-          					<option option="manager" <?php echo ($designation=='manager')?'selected':''?>>Manager</option>
-          					<option option="sr_manager" <?php echo ($designation=='sr manager')?'selected':''?>>Sr. Manager</option>
-          					<option option="asst_gm" <?php echo ($designation=='asst gm')?'selected':''?>>Asst.GM</option>
-          					<option option="dy_gm" <?php echo ($designation=='dy gm')?'selected':''?>>Dy GM</option>
-          					<option option="sr_gmvpresident" <?php echo ($designation=='sr gmvpresident')?'selected':''?>>Sr.GMVP President</option>
-          					<option option="jr_engineer" <?php echo ($designation=='jr engineer')?'selected':''?>>Jr.Engineer</option>
+                    <option option="asst_manager" <?php echo ($designation=='asst manager')?'selected':''?>>Asst. Manager</option>
+                    <option option="dy_manager" <?php echo ($designation=='dy manager')?'selected':''?>>Dy. Manager</option>
+                    <option option="manager" <?php echo ($designation=='manager')?'selected':''?>>Manager</option>
+                    <option option="sr_manager" <?php echo ($designation=='sr manager')?'selected':''?>>Sr. Manager</option>
+                    <option option="asst_gm" <?php echo ($designation=='asst gm')?'selected':''?>>Asst.GM</option>
+                    <option option="dy_gm" <?php echo ($designation=='dy gm')?'selected':''?>>Dy GM</option>
+                    <option option="sr_gmvpresident" <?php echo ($designation=='sr gmvpresident')?'selected':''?>>Sr.GMVP President</option>
+                    <option option="jr_engineer" <?php echo ($designation=='jr engineer')?'selected':''?>>Jr.Engineer</option>
                   </select>
                 </span>
               </li>
@@ -1318,8 +1367,9 @@ if(isset($POST['data']) && $POST['data']=='1')
                   <div class="file-select">
                     <div class="file-select-button" id="fileName">Upload Your Resume*</div>
                     <div class="file-select-name" id="noFile" value="<?php echo $_FILES['resume']['name'];?>"></div> 
-                    <input type="file" name="resume" id="chooseFile" value=""><br>Allowed only pdf and doc file
+                    <input type="file" name="resume" id="chooseFile" value=""><br>
                   </div>
+                  <div>Allowed only pdf and doc file</div>
                 </div>
               </li>
             </ul>
@@ -1383,15 +1433,15 @@ if(isset($POST['data']) && $POST['data']=='1')
               $("#namebox span").text('Only characters');
 
           });
-		  /*
-		  $('#name').keyup(function(){
-			   if (!/^[a-zA-Z]*$/g.test(document.career_form.name.value)) {
-					$("#namebox span").text('Invalid characters');
-					document.career_form.name.focus();
-					return false;
-				}else{					
-				}
-		  });*/
+      /*
+      $('#name').keyup(function(){
+         if (!/^[a-zA-Z]*$/g.test(document.career_form.name.value)) {
+          $("#namebox span").text('Invalid characters');
+          document.career_form.name.focus();
+          return false;
+        }else{          
+        }
+      });*/
           
 
           $('#pan').keyup(function()
@@ -1694,7 +1744,7 @@ if(isset($POST['data']) && $POST['data']=='1')
                  }
                  if(mobile==""){
                   $(".errMsg").show();
-                  $(".errMsg").text("Please enter your mobile");
+                  $(".errMsg").text("Please enter your mobile no.");
                   $("#mobile").addClass('errorRed');
                   $("#mobile").focus();
                   isOk = false;
@@ -1735,15 +1785,15 @@ if(isset($POST['data']) && $POST['data']=='1')
                   }else{
                     $("#email").removeClass('errorRed');
                   }
-                  /*if(file==''){
+                  if(file==''){
                     $(".errMsg").show();
                     $(".errMsg").text('Please enter your file');
                     $("#chooseFile").addClass('errorRed')
                     $("#chooseFile").focus();
                     isOk = false;
                     return  false;
-                  }*/
-              /*   var file = document.getElementById('chooseFile').files[0];
+                  }
+                 var file = document.getElementById('chooseFile').files[0];
 
                   if(file && file.size < 3097152) { // 10 MB (this size is in bytes)
                     $('career_form').submit();
@@ -1756,7 +1806,7 @@ if(isset($POST['data']) && $POST['data']=='1')
                     isOk = false;
                     return  false;
                   }
-*/
+
                   var jobdata=$("#add_more").attr('data');
                   $("#jobdata").val(jobdata);
                   $('career_form').submit();

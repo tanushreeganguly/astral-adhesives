@@ -120,7 +120,7 @@ else
 				<h3><?php echo stripslashes($video_list['title1'])." ".stripslashes($video_list['title2']); if($video_list['location']!=""){ echo ",".stripslashes($video_list['location']);}?></h3>
                     <div class="galleryImg">
                         <a href="http://www.youtube.com/watch?v=<?php echo stripslashes($video_list['youtube']);?>" class="video_link">
-                          <img orgSrc="<?=base_url?>uploads/astral_adhesive_image/large/<?php echo stripslashes($video_list['image1']);?>" src="<?=base_url?>assets/images/loader-gallery-2.gif" alt="" class="loader_gif">
+                          <img orgSrc="<?=base_url?>uploads/astral_adhesive_image/large/<?php echo stripslashes($video_list['image1']);?>" src="<?=base_url?>assets/images/loader-gallery.gif" alt="" class="loader_gif">
                           <div class="video_play"><img src="<?=base_url?>assets/images/play-btn.png" alt=""></div>
                         </a>
                     </div>

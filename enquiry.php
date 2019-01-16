@@ -18,7 +18,7 @@ function smssendotp($number)
 		
 		$ch = curl_init();  // initiate curl
 
-		$url = "http://www.smsjust.com/sms/user/urlsms.php?"; // where you want to post data - final
+		$url = "https://www.smsjust.com/sms/user/urlsms.php?"; // where you want to post data - final
 		curl_setopt($ch, CURLOPT_URL,$url);
 		curl_setopt($ch, CURLOPT_POST, true);  // tell curl you want to post something
 		curl_setopt($ch, CURLOPT_POSTFIELDS, "username=astralpoly&pass=aptl@2017&senderid=ASTRAL&dest_mobileno=$number&message=Thank you for your details! We will get in touch with you shortly&response=Y"); 
@@ -102,6 +102,12 @@ if(isset($POST['data']) && $POST['data']=='1')
 			$error 	= "Please specify the type of enquiry";
 			$flag	= false;
 		}
+		if($type_enquiry!="" ){
+			if(!preg_match('/^[a-z A-Z]+$/',$type_enquiry)){
+				$error 	= "Please enter a valid type of enquiry";
+				$flag	= false;
+			}
+		}
 	}
 	if(strlen($error)<=0){
 		if($state=="" ){
@@ -170,7 +176,7 @@ if(isset($POST['data']) && $POST['data']=='1')
 			
 			 
 			
-			/* if(isset($insert_id) && $insert_id > 0){
+			 if(isset($ins) && $ins > 0){
 								
 				require ('include/PHPMailer/PHPMailerAutoload.php');									
 				//Gemini Mail			
@@ -178,24 +184,24 @@ if(isset($POST['data']) && $POST['data']=='1')
 				$hrmail->isHTML(true);
 				$hrmail->IsSMTP();
 				$hrmail->Mailer 	= "smtp";
-				$hrmail->Host       = ""; 
+				$hrmail->Host       = "mail.astraladhesives.com"; 
 				$hrmail->SMTPDebug  = 0; 
 				$hrmail->SMTPAuth   = true; 
-				$hrmail->Port       = 25;
+				$hrmail->Port       = 587;
 				$hrmail->SMTPSecure = 'TLS';
-				$hrmail->Username   = "info@bhratbenz.com";
-				$hrmail->Password   = "info123!@#";							
-				$hrmail->setFrom('info@bhratbenz.com', 'Bharat BharatBenz');
+				$hrmail->Username   = "marketing@astraladhesives.com";
+				$hrmail->Password   = "Adhesives123";							
+				$hrmail->setFrom('marketing@astraladhesives.com', 'Astral Adhesives');
 				$hrmail->addReplyTo(strtolower($decodeemail), $name); 	
 			
-				$hrmail->addAddress('info@bhratbenz.com', 'Bharat BharatBenz');				
+				$hrmail->addAddress('marketing@astraladhesives.com', 'Astral Adhesives');				
 				//$hrmail->addBCC('farheen.parkar@bcwebwise.com', 'Farheen');
 				//$hrmail->addBCC('mitul.jagushte@bcwebwise.com', 'Mitul Jagushte');					
 	
 				$hrmail->Subject  = 'Feedback received from '.ucwords($name).' - '.date("jS F Y");
 				$html_content     = "<p><b>Contact information - To serve you better.</b></p>";						
 				$html_content	 .= "<p>Name :- ".ucwords($name)."  ,</p>";
-				$html_content	 .= "<p>Email :- ".strtolower($email)."  ,</p>";
+				$html_content	 .= "<p>Email :- ".strtolower($decodeemail)."  ,</p>";
 				$html_content	 .= "<p>Mobile :- ".$mobile."  ,</p>";
 				$html_content	 .= "<p>Location :- ".stripslashes($location)."  ,</p>";
 				$html_content	 .= "<p>Message :- ".stripslashes($decodemessage)."  .</p>";
@@ -212,29 +218,76 @@ if(isset($POST['data']) && $POST['data']=='1')
 				$mail->isHTML(true);								
 				$mail->IsSMTP();
 				$mail->Mailer 	  = "smtp";
-				$mail->Host       = "bhratbenz.com"; 
+				$mail->Host       = "mail.astraladhesives.com"; 
 				$mail->SMTPDebug  = 0; 
 				$mail->SMTPAuth   = true; 
-				$mail->Port       = 25;
+				$mail->Port       = 587;
 				$mail->SMTPSecure = 'TLS';
-				$mail->Username   = "info@bhratbenz.com"; 
-				$mail->Password   = "info123!@#";		
-				$mail->setFrom('info@bhratbenz.com', 'Bharat BharatBenz');		
-				$mail->addReplyTo('info@bhratbenz.com', 'Bharat BharatBenz'); 					
+				$mail->Username   = "marketing@astraladhesives.com"; 
+				$mail->Password   = "Adhesives123";		
+				$mail->setFrom('marketing@astraladhesives.com', 'Astral Adhesives');		
+				$mail->addReplyTo('marketing@astraladhesives.com', 'Astral Adhesives'); 					
 				$mail->isHTML(true);
 
 				$mail->addAddress(strtolower($decodeemail), $name);								
 				//$mail->addBCC('farheen.parkar@bcwebwise.com', 'Farheen');
 				
 				$mail->Subject  = "Thank you";
-				$mail->Body     = "Thank you for your details! We will get in touch with you shortly.";
+				$mail->Body     = '<html>
+                                    <head>
+                                    <title>Careers</title>
+                                    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+                                    </head>
+                                    <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+                                     
+                                    <table width="700"   border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#1673BF" style="border:1px solid #000;" >
+                                    <tr>
+                                        <td height="122" colspan="2" align="left" valign="top">
+                                          <a href="https://test.astraladhesives.com"><img src="https://test.astraladhesives.com/assets/images/logo.gif" alt="Astral Adhesives" width="323" height="73" border="0"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td height="384" colspan="2" align="center"><img src="https://test.astraladhesives.com/assets/images/thank.gif" width="262" height="262" alt="Thank you"></td>
+                                      </tr>
+                                      <tr>
+                                        <td height="184" colspan="2" valign="top"  style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:150%; color:#ffffff; padding-left:99px; padding-right:99px; text-align:center;">Thank you for reaching out to us. We will get in touch with you to address  your queries and / or concern, soon!</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="79">
+                                          <img src="https://test.astraladhesives.com/assets/images/corner.gif" width="79" height="74" alt=""></td>
+                                        <td width="621" bgcolor="#FFFFFF">
+                                        <table id="Table_01" border="0" cellpadding="0" cellspacing="0" style="width: 612px; ">
+                                      <tr>
+                                        <td width="216" rowspan="2"><a href="http://www.astraladhesives.com/"  style="font-size:22px; font-family:`Times New Roman`, Times, serif;  font-weight:bold; color:#1D69B7; text-decoration:none;" >
+                                        www.astraladhesives.com</a></td>
+                                      <td width="1" rowspan="2">
+                                          <img src="https://test.astraladhesives.com/assets/images/fff_02.gif" width="1" height="52" alt=""></td>
+                                      <td width="203" align="center"></td>
+                                      <td width="1" rowspan="2">
+                                          <img src="https://test.astraladhesives.com/assets/images/fff_04.gif" width="1" height="52" alt=""></td>
+                                      <td width="52" rowspan="2">
+                                          <a href="https://www.facebook.com/AstralAdhesives/"><img src="https://test.astraladhesives.com/assets/images/fb.gif" alt="facebook" width="45" height="52" border="0"></a></td>
+                                      <td width="45" rowspan="2">
+                                          <a href="https://twitter.com/astraladhesives"><img src="https://test.astraladhesives.com/assets/images/twitter.gif" alt="twitter" width="45" height="52" border="0"></a></td>
+                                      <td width="43" rowspan="2">
+                                          <a href="https://www.youtube.com/channel/UC-7wKHr0O_armoSAddVgHIw"><img src="https://test.astraladhesives.com/assets/images/youtube.gif" alt="youtube" width="45" height="52" border="0"></a></td>
+                                      <td width="41" rowspan="2">
+                                          <a href="https://www.instagram.com/astral_adhesives/"><img src="https://test.astraladhesives.com/assets/images/insta.gif" alt="instagram" width="45" height="52" border="0"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="203" align="center"><a href="tel:7311103331" style="font-size:21px; font-family:`Times New Roman`, Times, serif; color:#1D69B7; font-weight:bold; text-decoration:none;" > <img src="https://test.astraladhesives.com/assets/images/tel.gif" alt="" width="33" height="28" border="0" align="absmiddle"> 7311103331</a></td>  </tr>
+                                    </table></td>
+                                      </tr>
+                                    </table>
+                                     
+                                    </body>
+                                    </html>';
 				
 				if(!$mail->send()){					
 					$message_serve	= "Thank you for your details! We will get in touch with you shortly.";
 				}else{
 					$message_serve = 'Thank you for your details! We will get in touch with you shortly.';
 				}				
-			}*/
+			}
 			$error="Thank you for your details! We will get in touch with you shortly.";	
 			$name=$email=$mobile=$type_enquiry=$country=$state=$location=$message=$decodemessage='';
 		}

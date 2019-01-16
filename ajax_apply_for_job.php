@@ -19,10 +19,10 @@ $insert_arr = array(
 				$insert_serve = $objTypes->insert("tbl_job_detail", $insert_arr);	
 
 				if($insert_serve>0){
-					echo "success";exit;
+					echo "success";exit();
 				}	else{
 
-					echo "Failed";exit;
+					echo "0";exit();
 				}				
 
 ?>

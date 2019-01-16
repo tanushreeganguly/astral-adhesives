@@ -8,7 +8,7 @@ $page=$objTypes->fetchRow('select * from tbl_pages where id=6');
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-  <title><?=strip_tags(stripslashes($page['title']))?></title>
+  <title><?=strip_tags(stripslashes($page['meta_title']))?></title>
   <meta name="description" content="<?=strip_tags(stripslashes($page['meta_description']))?>" />
   <meta name="keywords" content="<?=strip_tags(stripslashes($page['meta_keywords']))?>" />
   <link href="<?=base_url?>assets/images/favicon.ico" rel="shortcut icon" type="" />

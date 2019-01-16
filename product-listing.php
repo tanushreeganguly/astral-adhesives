@@ -193,7 +193,7 @@ if($catgoryid > 0){
        });
      $(".brand_val,.default_data").on('click',function(){
        var getUrl = window.location;
-       var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+       var baseUrl = getUrl .protocol + "//" + getUrl.host;
        var brand_id= $(this).attr('data');
        var category_id="<?php echo $data_chemistry[0]['chemistry_title'];?>";
      
