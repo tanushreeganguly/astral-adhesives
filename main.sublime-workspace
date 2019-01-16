@@ -1,0 +1,332 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"chara",
+				"characters"
+			],
+			[
+				"strt",
+				"strtolower"
+			],
+			[
+				"dosa",
+				"dosage"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"strip",
+				"strip_tags"
+			],
+			[
+				"base",
+				"base_url"
+			],
+			[
+				"chec",
+				"checked"
+			],
+			[
+				"ma",
+				"maxlength\tAttr"
+			],
+			[
+				"career",
+				"career_form"
+			],
+			[
+				"logo",
+				"logo_image"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/G/astral-adhesives/index.php",
+		"/G/astral-adhesives/faq.php",
+		"/G/astral-adhesives/manage/add_categories.php",
+		"/G/astral-adhesives/manage/act_categories.php",
+		"/G/astral-adhesives/include/header.php",
+		"/G/astral-adhesives/download.php",
+		"/G/astral-adhesives/gallery.php",
+		"/G/astral-adhesives/brands.php",
+		"/G/astral-adhesives/brand_load.php",
+		"/G/astral-adhesives/fetch_brand.php",
+		"/G/astral-adhesives/manage/act_image.php",
+		"/G/astral-adhesives/enquiry.php",
+		"/G/astral-adhesives/contact-us.php",
+		"/C/Users/Admin/Downloads/contact-us.php",
+		"/G/astral-adhesives/career-form.php",
+		"/G/astral-adhesives/add_job.php",
+		"/G/bharatbenz/contact-us.php",
+		"/G/astral-adhesives/career.php",
+		"/G/astral-adhesives/ajax_current_opening.php",
+		"/G/astral-adhesives/product-details.php",
+		"/G/astral-adhesives/data_search.php",
+		"/G/astral-adhesives/product-listing.php",
+		"/G/astral-adhesives/rnd.php",
+		"/G/astral-adhesives/career-details.php",
+		"/G/astral-adhesives/brand-detail.php",
+		"/G/astral-adhesives/industrial.php",
+		"/G/astral-adhesives/include/footer.php",
+		"/G/astral-adhesives/ajax_apply_for_career.php",
+		"/G/astral-adhesives/addresume.php",
+		"/G/gemini_php/contact-us.php",
+		"/G/astral-adhesives/news-events.php",
+		"/G/astral-adhesives/manage/add_event.php",
+		"/G/astral-adhesives/manage/add_page.php",
+		"/G/heromotocorp/en-in/corporate-sales.php",
+		"/G/farheen/validation.php",
+		"/G/astral-adhesives/404.php",
+		"/G/astral-adhesives/include/othercode.php",
+		"/G/astral-adhesives/.htaccess",
+		"/G/astral-adhesives/js/footer.js",
+		"/G/heromotocorp/en-in/cc-shareholders.php",
+		"/G/bharatbenz/.htaccess",
+		"/G/astral-adhesives/manage/add_brand.php",
+		"/G/astral-adhesives/manage/act_brand.php",
+		"/G/heromotocorp/en-in/.htaccess",
+		"/G/heromotocorp/en-bd/brijmohan-profiledetails.php",
+		"/G/bharatbenz/404.php",
+		"/G/astral-adhesives/chemistry-listing.php",
+		"/G/astral-adhesives/html/index.html",
+		"/G/astral-adhesives/newsletter_signup.php",
+		"/G/gemini_php/include/header.php",
+		"/G/gemini_php/config/config.php",
+		"/G/gemini_php/include/footer.php",
+		"/G/gemini_php/include/othercode.php",
+		"/G/astral-adhesives/include/function.php",
+		"/G/gemini_php/index.php",
+		"/G/astral-adhesives/include/form_token.php",
+		"/G/astral-adhesives/html/career-landing.html",
+		"/G/astral-adhesives/manage/act_event.php",
+		"/G/astral-adhesives/manage/list_event.php",
+		"/G/astral-adhesives/manage/add_newsletter.php",
+		"/G/astral-adhesives/manage/add_homebanner.php",
+		"/G/astral-adhesives/manage/list_homebanner.php",
+		"/G/astral-adhesives/about-us.php",
+		"/G/astral-adhesives/jobdetails.php",
+		"/G/astral-adhesives/manage/list_applied_users.php",
+		"/G/astral-adhesives/press-release.php",
+		"/G/astral-adhesives/html/about-us.html",
+		"/G/astral-adhesives/assets/js/about-us.js",
+		"/G/astral-adhesives/manage/left.php",
+		"/G/astral-adhesives/manage/act_newsletter.php",
+		"/G/astral-adhesives/manage/list_newsletter.php",
+		"/G/astral-adhesives/html/industrial.html",
+		"/G/astral-adhesives/tst.php",
+		"/G/astral-adhesives/manage/11.php",
+		"/G/astral-adhesives/manage/add_product.php",
+		"/G/astral-adhesives/manage/ckeditor/config.js",
+		"/G/bharatbenz/manage/ckeditor/config.js",
+		"/G/bharatbenz/manage/add_page.php",
+		"/G/astral-adhesives/mission-vision.php",
+		"/G/astral-adhesives/vision-mission.php",
+		"/G/astral-adhesives/html/vision-mission.html",
+		"/G/astral-adhesives/html/contact-us.html",
+		"/G/astral-adhesives/data_add.php",
+		"/G/astral-adhesives/manage/ckeditor/ckeditor.js",
+		"/G/astral-adhesives/manage/list_categories.php",
+		"/G/astral-adhesives/manage/list_brand.php",
+		"/G/astral-adhesives/include/header bk.php",
+		"/G/astral-adhesives/manage/act_product.php",
+		"/G/astral-adhesives/assets/js/home.js",
+		"/G/astral-adhesives/ajax_apply_for_job.php",
+		"/G/astral-adhesives/milestones.php",
+		"/G/nutrela/application/controllers/admin/recipe_plan_detail.php",
+		"/G/nutrela/application/controllers/admin/recipe_plans.php",
+		"/G/nutrela/application/views/admin/recipe_plans/list_user.php",
+		"/G/nutrela/application/controllers/recipe.php",
+		"/G/nutrela/application/controllers/admin/recipes.php",
+		"/G/nutrela/application/controllers/admin/consumer.php",
+		"/G/nutrela/application/models/recipe_plans_model.php",
+		"/G/nutrela/application/controllers/admin/live/recipes.php",
+		"/G/nutrela/application/models/insert_mealplan.php",
+		"/G/astral-adhesives/html/milestones.html",
+		"/G/nutrela/application/views/admin/connect/list_connect.php",
+		"/G/nutrela/application/controllers/home.php",
+		"/G/nutrela/application/views/include/header.php",
+		"/G/nutrela/application/views/admin/admin/admin.php",
+		"/G/nutrela/application/views/include/footer.php",
+		"/G/nutrela/application/views/user/calender.php",
+		"/G/nutrela/application/views/user/meal-planning.php",
+		"/G/nutrela/application/controllers/mealplanning.php",
+		"/G/nutrela/application/views/admin/recipes/list_user.php",
+		"/G/astral-adhesives/manage/act_milestone.php",
+		"/G/astral-adhesives/manage/add_milestone.php",
+		"/G/astral-adhesives/manage/list_milestone.php",
+		"/G/astral-adhesives/html/career-details.html",
+		"/G/astral-adhesives/html/rnd.html",
+		"/G/astral-adhesives/linkdinresponse.php",
+		"/G/astral-adhesives/manage/act_pressrelease.php",
+		"/G/astral-adhesives/manage/act_page.php",
+		"/G/astral-adhesives/thankyou.php",
+		"/G/bharatbenz/manage/act_downloads.php",
+		"/G/astral-adhesives/manage/list_product.php",
+		"/G/astral-adhesives/brand_product.php",
+		"/G/nutrela/HTML/nutrila-230818-mailer/index.html",
+		"/G/nutrela/application/views/admin/recipe_plans/add_recipe_plans.php",
+		"/G/nutrela/application/views/admin/recipe_plans/list_recipe_plans.php",
+		"/G/nutrela/application/views/admin/recipe_plans/list_recipe_plan_detail.php",
+		"/G/nutrela/application/models/recipe_plan_detail_model.php",
+		"/G/nutrela/application/views/admin/recipe_plans/add_recipe_plan_detail.php"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "main.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
