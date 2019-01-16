@@ -102,12 +102,6 @@ if(isset($POST['data']) && $POST['data']=='1')
 			$error 	= "Please specify the type of enquiry";
 			$flag	= false;
 		}
-		if($type_enquiry!="" ){
-			if(!preg_match('/^[a-z A-Z]+$/',$type_enquiry)){
-				$error 	= "Please enter a valid type of enquiry";
-				$flag	= false;
-			}
-		}
 	}
 	if(strlen($error)<=0){
 		if($state=="" ){

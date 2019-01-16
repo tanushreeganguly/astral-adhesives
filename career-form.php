@@ -1318,9 +1318,8 @@ if(isset($POST['data']) && $POST['data']=='1')
                   <div class="file-select">
                     <div class="file-select-button" id="fileName">Upload Your Resume*</div>
                     <div class="file-select-name" id="noFile" value="<?php echo $_FILES['resume']['name'];?>"></div> 
-                    <input type="file" name="resume" id="chooseFile" value=""><br>
+                    <input type="file" name="resume" id="chooseFile" value=""><br>Allowed only pdf and doc file
                   </div>
-                  <div>Allowed only pdf and doc file</div>
                 </div>
               </li>
             </ul>

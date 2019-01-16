@@ -42,9 +42,6 @@ else { $title_application = $objTypes->prepare_url(stripslashes($datacategory['t
   <link href="<?=base_url?>assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css">
   <style> 
   #product .packing li p  { max-width:240px;}
-  .activeTab {
-    color: #ff7e00;
-  }
   </style>
    <?php include_once('include/googlecode.php'); ?>
   </head>
@@ -290,7 +287,7 @@ else { $title_application = $objTypes->prepare_url(stripslashes($datacategory['t
               
             </div>
           <?php }?>
- 
+
           </div>
 
         </div>
@@ -313,18 +310,7 @@ else { $title_application = $objTypes->prepare_url(stripslashes($datacategory['t
     <script type="text/javascript" src="<?=base_url?>assets/js/debug.addIndicators.js"></script> 
     <script type="text/javascript" src="<?=base_url?>assets/js/common.js"></script>
     <script type="text/javascript" src="<?=base_url?>assets/js/product.js"></script>
-	  <script type="text/javascript">
-     $(document).ready(function(){
-
-        $(".specs_list span").on('click',function(){
-          $(".specs_list span").removeClass('activeTab');
-          $(this).addClass('activeTab');
-        });
-
-     });
-
-
-    </script> 
+	
     
     <!--[if lt IE 9]>
         <script src="<?=base_url?>js/html5shiv.min.js"></script>
