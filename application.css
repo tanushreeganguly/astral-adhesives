@@ -1,0 +1,369 @@
+.tilesCon .tile_back_face .animDiv {
+  position: relative;
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+}
+.tilesCon .tile_back_face .animDiv img {
+  position: absolute;
+  width: auto;
+  height: auto;
+}
+#waterProfing .dropHolder {
+  width: 100%;
+  height: 100%;
+  -webkit-filter: url('#elasticSVG');
+  -moz-filter: url('#elasticSVG');
+  -o-filter: url('#elasticSVG');
+  filter: url('#elasticSVG');
+}
+#waterProfing .dropHolder .waterDrop {
+  position: absolute;
+  background: #82d9e7;
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+}
+.sampleSVG {
+  display: block;
+  position: absolute;
+  left: -2000px;
+}
+#tileMortar .leftAnimHolder {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#tileMortar .leftAnimHolder .square_1 {
+  left: 0px;
+  top: 0px;
+}
+#tileMortar .leftAnimHolder .square_2 {
+  left: 49px;
+  top: 48px;
+}
+#tileMortar .leftAnimHolder .square_3 {
+  left: -25px;
+  top: 122px;
+}
+#tileMortar .rightAnimHolder {
+  position: absolute;
+  left: 476px;
+  top: 143px;
+}
+#tileMortar .rightAnimHolder .square_4 {
+  left: 0px;
+  top: -86px;
+}
+#tileMortar .rightAnimHolder .square_5 {
+  left: 74px;
+  top: -163px;
+}
+#tileMortar .rightAnimHolder .square_6 {
+  left: 104px;
+  top: -89px;
+}
+#maintenance .leftAnimHld {
+  position: absolute;
+  right: 600px;
+  top: 0px;
+}
+#maintenance .leftAnimHld .bottle_1 {
+  position: absolute;
+  left: 0px;
+  top: 75px;
+  width: 52px;
+}
+#maintenance .leftAnimHld .bottle_2 {
+  position: absolute;
+  left: 52px;
+  top: 60px;
+  width: 63px;
+}
+#maintenance .rightAnimHld {
+  position: absolute;
+  right: 135px;
+  top: 0px;
+}
+#maintenance .rightAnimHld .tube_1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 50px;
+}
+#maintenance .rightAnimHld .tube_2 {
+  position: absolute;
+  left: 52px;
+  top: 50px;
+  width: 42px;
+}
+#industry .ind_anim_lt {
+  position: absolute;
+  right: 700px;
+  top: 0px;
+}
+#industry .ind_anim_lt .workshop {
+  left: 0px;
+  top: 22px;
+  width: 172px;
+}
+#industry .ind_anim_rt {
+  position: absolute;
+  right: 160px;
+  top: 0px;
+}
+#industry .ind_anim_rt .chimani_01 {
+  left: 0px;
+  top: 90px;
+  width: 57px;
+}
+#industry .ind_anim_rt .chimani_02 {
+  left: 0px;
+  left: 37px;
+  top: 104px;
+}
+#industry .ind_anim_rt .cloud {
+  left: 22px;
+  top: 60px;
+  width: 48px;
+}
+#constructionChemicals .truck {
+  position: absolute;
+  right: 450px;
+  top: 75px;
+}
+#constructionChemicals .craneHolder {
+  position: absolute;
+  right: 168px;
+  bottom: 200px;
+}
+#constructionChemicals .craneHolder .bucketHolder {
+  position: absolute;
+  top: 37px;
+  left: 6px;
+  width: 50px;
+  height: 176px;
+  /*border: solid thin #ff0000;*/
+  overflow: hidden;
+}
+#constructionChemicals .craneHolder .bucketHolder .bucket {
+  top: -36px;
+  left: 0px;
+}
+#marbleGranite .barble-1 {
+  top: -167px;
+  left: -21px;
+}
+#marbleGranite .barble-2 {
+  left: 40px;
+  bottom: -110px;
+}
+#marbleGranite .barble-3 {
+  left: 400px;
+  bottom: -15px;
+}
+#marbleGranite .barble-4 {
+  top: -35px;
+  left: 480px;
+}
+#gapGlazing .spray {
+  right: 485px;
+  bottom: -10px;
+}
+#gapGlazing .bucket {
+  right: 20px;
+  bottom: -16px;
+}
+#gapGlazing .machine {
+  right: -30px;
+  bottom: 45px;
+}
+#furnitureWoodcare .flowerTable {
+  top: 0px;
+  left: 0px;
+}
+#furnitureWoodcare .cupboard {
+  bottom: 0px;
+  left: 440px;
+}
+#furnitureWoodcare .chair {
+  bottom: 0px;
+  left: 660px;
+}
+#fabricApp {
+  perspective: 1500px;
+}
+#fabricApp .animDiv {
+  transform-style: preserve-3d;
+}
+#fabricApp .shadow {
+  top: 0px;
+}
+#fabricApp .fabric_1 {
+  top: 0px;
+  /*left:68px;*/
+  display: none;
+}
+#fabricApp .fabric_2 {
+  top: 0px;
+  /*left:68px;*/
+  display: none;
+}
+#fabricApp .fabric_3 {
+  top: 0px;
+  /*left:136px;*/
+  display: none;
+}
+#fabricApp .fabric_4 {
+  top: 0px;
+  /*left:136px;*/
+  display: none;
+}
+#fabricApp .bobin {
+  bottom: -22px;
+  left: 438px;
+}
+#fabricApp .scissor {
+  top: -50px;
+  left: 495px;
+}
+#automobileApp .panna1 {
+  left: 0px;
+  bottom: 32px;
+}
+#automobileApp .panna2 {
+  left: 10px;
+  bottom: 10px;
+}
+#automobileApp .tire {
+  left: 115px;
+  bottom: -33px;
+}
+#automobileApp .carHolder {
+  position: absolute;
+  bottom: 0px;
+  left: 427px;
+}
+#automobileApp .carHolder .stand {
+  position: absolute;
+  left: 23px;
+  bottom: 0px;
+  width: 23px;
+  height: 41px;
+  background: #d5351b;
+}
+#automobileApp .carHolder .handdle {
+  left: 0px;
+  bottom: 20px;
+}
+#automobileApp .carHolder .car {
+  left: 28px;
+  bottom: 7px;
+}
+#automobileApp .carHolder .blackTire {
+  position: absolute;
+  left: 158px;
+  bottom: 0px;
+  width: 27px;
+  height: 40px;
+  background: #403f3f;
+}
+#tapeApp .blackTape {
+  left: -10px;
+  bottom: 20px;
+}
+#tapeApp .whiteTape {
+  left: 85px;
+  bottom: 10px;
+}
+#tapeApp .tranTape1 {
+  position: absolute;
+  left: 495px;
+  bottom: 0px;
+  width: 55px;
+  height: 200px;
+  background: #d4bd7d;
+}
+#tapeApp .tranTape2 {
+  position: absolute;
+  left: 525px;
+  bottom: 0px;
+  width: 55px;
+  height: 200px;
+  background: #ead6a3;
+}
+#glassBonding .glass1 {
+  right: 510px;
+  top: -60px;
+}
+#glassBonding .glass2 {
+  right: 532px;
+  bottom: -81px;
+}
+#glassBonding .glass3 {
+  right: 78px;
+  bottom: -65px;
+}
+#glassBonding .glass4 {
+  right: 50px;
+  bottom: -18px;
+}
+#glassBonding .glass5 {
+  right: -50px;
+  top: -5px;
+}
+#accessoriesApp .glueGun {
+  top: -10px;
+  left: -35px;
+}
+#plumbingApp .leftPipeHolder {
+  position: absolute;
+  bottom: 0;
+  right: 455px;
+}
+#plumbingApp .leftPipeHolder .joinedPipe {
+  bottom: -45px;
+  right: 0px;
+}
+#plumbingApp .leftPipeHolder .handdle {
+  right: 75px;
+  bottom: 15px;
+}
+#plumbingApp .leftPipeHolder .svgPipe1 {
+  position: absolute;
+  right: 66px;
+  bottom: 50px;
+  width: 57px;
+  height: 136px;
+}
+#plumbingApp .pipe1 {
+  right: 0px;
+  top: 0px;
+}
+#plumbingApp .pipe2 {
+  right: -40px;
+  top: 100px;
+}
+@media handheld, only screen and (max-width: 1600px) {
+  /*#marbleGranite{
+		.barble-1{		
+			top: -167px;
+			left: -21px;
+		}
+		.barble-2{		
+			left: 40px;
+			bottom:-110px;
+		}
+		.barble-3{		
+			left: 375px;
+			bottom:-15px;
+		}
+		.barble-4{		
+			top: -35px;
+			left: 450px;
+		}
+	}*/
+}
