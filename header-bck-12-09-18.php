@@ -1,0 +1,95 @@
+   <header>
+        <div class="headerCon">
+            <div class="hd_top">
+              <a href="tel:+91 7311103331"><img src="<?=base_url?>assets/images/icon-phone.png" onmouseover="this.src='<?=base_url?>assets/images/icon-phone-hover.png'"
+       onmouseout="this.src='<?=base_url?>assets/images/icon-phone.png'" alt="Phone Number" align="absmiddle"> +91 7311103331</a>
+              <a href="https://www.facebook.com/AstralAdhesives/" target="_blank"><img src="<?=base_url?>assets/images/icon-fb.png" onmouseover="this.src='<?=base_url?>assets/images/icon-fb-hover.png'"
+       onmouseout="this.src='<?=base_url?>assets/images/icon-fb.png'" alt="Facebook"></a>
+              <a href="https://twitter.com/astraladhesives" target="_blank"><img src="<?=base_url?>assets/images/icon-tw.png" onmouseover="this.src='<?=base_url?>assets/images/icon-tw-hover.png'"
+       onmouseout="this.src='<?=base_url?>assets/images/icon-tw.png'" alt="Tweeter"></a>
+              <a href="https://www.youtube.com/channel/UC-7wKHr0O_armoSAddVgHIw" target="_blank"><img src="<?=base_url?>assets/images/icon-yt.png" onmouseover="this.src='<?=base_url?>assets/images/icon-yt-hover.png'"
+       onmouseout="this.src='<?=base_url?>assets/images/icon-yt.png'" alt="Youtube"></a>
+              <a href="https://www.instagram.com/astral_adhesives/" target="_blank"><img src="<?=base_url?>assets/images/icon-insta.png" onmouseover="this.src='<?=base_url?>assets/images/icon-insta-hover.png'"
+       onmouseout="this.src='<?=base_url?>assets/images/icon-insta.png'" alt="Instagram"></a>
+            </div>
+            <div class="hd_bottom">
+              <div class="res_top">
+                <div class="logo">
+                  <a href="<?=base_url?>"><picture>
+                    <source media="(max-width: 480px)" srcset="<?=base_url?>assets/images/logo-desktop.png">
+                    <source media="(max-width: 1023px)" srcset="<?=base_url?>assets/images/logo-desktop.png">
+                    <img src="<?=base_url?>assets/images/logo-desktop.png" alt="Astral Adhesives">
+                  </picture></a>
+                </div>
+                <div id="nav-icon1">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+               </div> 
+              <nav>
+                <div class="mobileMenuClose"><img src="<?=base_url?>assets/images/close-menu-mob.png" alt=""></div>
+                <ul class="slimmenu">
+                  <li><a href="javascript:void(0);">About us</a>
+                      <ul>
+                        <li><a href="<?=base_url?>about-us">About Astral Adhesives</a></li>
+                        <li><a href="<?=base_url?>mission-vision">Mission &amp; Vision</a></li>
+                        <li><a href="<?=base_url?>milestones">Milestones</a></li>
+                        <li><a href="<?=base_url?>RnD">R &amp; D Facilities</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="javascript:void(0);">Products </a>
+				  <?php
+					//home page application
+					$order1= 'sortorder ASC';
+					$sql = "SELECT title,id FROM tbl_categories WHERE parent_category_id = :parent_category_id AND is_delete = :is_delete AND is_active = :is_active AND sortorder!=0  order by sortorder ASC";
+					$bind= array(':parent_category_id' => 0, ':is_delete' => '1', ':is_active' => '1');
+					$ProData   = $objTypes->fetchAll($sql, $bind, $order1);
+					
+					
+				?>
+                    <ul>
+					<?php
+					if(isset($ProData) && sizeof($ProData) > 0){
+					foreach($ProData as $indCat){
+					
+					$title = $objTypes->prepare_url(stripslashes($indCat['title']));
+					if($indCat['id']==42) { $title = 'paper-pvc-adhesive-tape'; }  
+					if($indCat['id']==41) { $title = 'tile-adhesive'; }  
+					if($indCat['id']==36) { $title = 'plumbing-pvc-cpvc-pipe-glue'; }  
+					if($indCat['id']==33) { $title = 'anaerobic-adhesive'; }  
+					if($indCat['id']==28) { $title = 'furniture-wood-care-glue'; }  
+					
+					?>
+                      <li><a href="<?=base_url?>p/<?=$title?>-<?=$indCat['id']?>"><?php echo stripslashes($indCat['title']);?></a></li>
+                      
+					  <?php
+						}
+					}
+					  ?>
+                    </ul>
+					
+                  </li>
+                  <li><a href="<?=base_url?>industrial-glue-adhesive">Industrial</a></li>
+        				  <li><a href="javascript:;">Infocenter</a>
+          					<ul>
+                           <li><a href="<?=base_url?>press-release">Press Release</a></li>
+          					       <li><a href="<?=base_url?>news-events">Upcoming Events</a></li>
+                           <li><a href="<?=base_url?>gallery">Gallery</a></li>
+                           <li><a href="<?=base_url?>download">Download</a></li>
+          					</ul>
+        				  </li>
+                 
+                  <li><a href="<?=base_url?>career-details">Career</a></li>
+                  
+                  <li><a href="<?=base_url?>contact-us">Contact us</a></li>
+                </ul>
+       <div class="search"><img src="<?=base_url?>assets/images/icon-search.png" onmouseover="this.src='<?=base_url?>assets/images/icon-search-hover.png'" onmouseout="this.src='<?=base_url?>assets/images/icon-search.png'" alt="Search"></div>
+
+              </nav>
+               <div class="menuOverlay"></div>
+            </div>
+          </div>
+       
+      </header>
+	  <div class="gutter" style="padding-top: 113px;"></div>
